@@ -1,0 +1,1423 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report MustUnderstand="df" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns:cl="http://schemas.microsoft.com/sqlserver/reporting/2010/01/componentdefinition" xmlns:df="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition/defaultfontfamily">
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0f57ce7a-b4b5-478b-94fc-c04cefe040db</rd:ReportID>
+  <df:DefaultFontFamily>Segoe UI</df:DefaultFontFamily>
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="AdventureWorksDW">
+      <rd:SecurityType>DataBase</rd:SecurityType>
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString>Data Source=DESKTOP-9ISV691;Initial Catalog=AdventureWorksDW</ConnectString>
+        <Prompt>Specify a user name and password for data source AdventureWorksDW:</Prompt>
+      </ConnectionProperties>
+      <rd:DataSourceID>705dd9db-ad2f-487d-9592-beea63078afc</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="InternestSales">
+      <Query>
+        <DataSourceName>AdventureWorksDW</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@SalesGroup">
+            <Value>=Parameters!SalesGroup.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@SalesCountry">
+            <Value>=Parameters!SalesCountry.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>Demo</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="ProductCategory">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>ProductCategory</DataField>
+        </Field>
+        <Field Name="ProductSubcategory">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>ProductSubcategory</DataField>
+        </Field>
+        <Field Name="Product">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Product</DataField>
+        </Field>
+        <Field Name="Customer">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Customer</DataField>
+        </Field>
+        <Field Name="Phone">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Phone</DataField>
+        </Field>
+        <Field Name="BirthDate">
+          <rd:TypeName>System.DateTime</rd:TypeName>
+          <DataField>BirthDate</DataField>
+        </Field>
+        <Field Name="MaritalStatus">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>MaritalStatus</DataField>
+        </Field>
+        <Field Name="Gender">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Gender</DataField>
+        </Field>
+        <Field Name="Email">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Email</DataField>
+        </Field>
+        <Field Name="YearlyIncome">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>YearlyIncome</DataField>
+        </Field>
+        <Field Name="TotalChildren">
+          <rd:TypeName>System.Byte</rd:TypeName>
+          <DataField>TotalChildren</DataField>
+        </Field>
+        <Field Name="Education">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Education</DataField>
+        </Field>
+        <Field Name="Occupation">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Occupation</DataField>
+        </Field>
+        <Field Name="HomeOwner">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>HomeOwner</DataField>
+        </Field>
+        <Field Name="Address">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Address</DataField>
+        </Field>
+        <Field Name="City">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>City</DataField>
+        </Field>
+        <Field Name="StateProvince">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>StateProvince</DataField>
+        </Field>
+        <Field Name="CountryCode">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>CountryCode</DataField>
+        </Field>
+        <Field Name="PostalCode">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>PostalCode</DataField>
+        </Field>
+        <Field Name="SalesGroup">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>SalesGroup</DataField>
+        </Field>
+        <Field Name="SalesCountry">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>SalesCountry</DataField>
+        </Field>
+        <Field Name="SalesRegion">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>SalesRegion</DataField>
+        </Field>
+        <Field Name="PromotionName">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>PromotionName</DataField>
+        </Field>
+        <Field Name="PromotionType">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>PromotionType</DataField>
+        </Field>
+        <Field Name="PromotionCategory">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>PromotionCategory</DataField>
+        </Field>
+        <Field Name="PromotionStart">
+          <rd:TypeName>System.DateTime</rd:TypeName>
+          <DataField>PromotionStart</DataField>
+        </Field>
+        <Field Name="PromotionEnd">
+          <rd:TypeName>System.DateTime</rd:TypeName>
+          <DataField>PromotionEnd</DataField>
+        </Field>
+        <Field Name="PromotionMinQty">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>PromotionMinQty</DataField>
+        </Field>
+        <Field Name="PromotionMaxQty">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>PromotionMaxQty</DataField>
+        </Field>
+        <Field Name="Currency">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Currency</DataField>
+        </Field>
+        <Field Name="CurrencyName">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>CurrencyName</DataField>
+        </Field>
+        <Field Name="SalesOrderNumber">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>SalesOrderNumber</DataField>
+        </Field>
+        <Field Name="SalesOrderLineNumber">
+          <rd:TypeName>System.Byte</rd:TypeName>
+          <DataField>SalesOrderLineNumber</DataField>
+        </Field>
+        <Field Name="OrderQuantity">
+          <rd:TypeName>System.Int16</rd:TypeName>
+          <DataField>OrderQuantity</DataField>
+        </Field>
+        <Field Name="UnitPrice">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>UnitPrice</DataField>
+        </Field>
+        <Field Name="TotalCost">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>TotalCost</DataField>
+        </Field>
+        <Field Name="SalesAmount">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>SalesAmount</DataField>
+        </Field>
+        <Field Name="Tax">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>Tax</DataField>
+        </Field>
+        <Field Name="Freight">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>Freight</DataField>
+        </Field>
+        <Field Name="OrderDate">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>OrderDate</DataField>
+        </Field>
+        <Field Name="DueDate">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>DueDate</DataField>
+        </Field>
+        <Field Name="ShipDate">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>ShipDate</DataField>
+        </Field>
+      </Fields>
+      <Filters>
+        <Filter>
+          <FilterExpression>=Fields!SalesRegion.Value</FilterExpression>
+          <Operator>In</Operator>
+          <FilterValues>
+            <FilterValue>=Parameters!SaleRegion.Value</FilterValue>
+          </FilterValues>
+        </Filter>
+      </Filters>
+    </DataSet>
+    <DataSet Name="Group">
+      <Query>
+        <DataSourceName>AdventureWorksDW</DataSourceName>
+        <CommandText>
+select distinct SalesTerritoryGroup from [DimSalesTerritory]
+where SalesTerritoryGroup != 'NA'
+</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="SalesTerritoryGroup">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>SalesTerritoryGroup</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="Country">
+      <Query>
+        <DataSourceName>AdventureWorksDW</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@SalesGroup">
+            <Value>=Parameters!SalesGroup.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+        <CommandText>select distinct SalesTerritoryCountry from [DimSalesTerritory]
+where SalesTerritoryCountry != 'NA'  
+and SalesTerritoryGroup = @SalesGroup</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="SalesTerritoryCountry">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>SalesTerritoryCountry</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="Region">
+      <Query>
+        <DataSourceName>AdventureWorksDW</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@SalesGroup">
+            <Value>=Parameters!SalesGroup.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@SalesCountry">
+            <Value>=Parameters!SalesCountry.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>
+select distinct SalesTerritoryRegion from [DimSalesTerritory]
+where SalesTerritoryRegion != 'NA'
+and SalesTerritoryGroup = @SalesGroup
+and SalesTerritoryCountry = @SalesCountry</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="SalesTerritoryRegion">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>SalesTerritoryRegion</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <ReportItems>
+          <Tablix Name="Tablix1">
+            <TablixBody>
+              <TablixColumns>
+                <TablixColumn>
+                  <Width>1.75334in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>2.10833in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1.13833in</Width>
+                </TablixColumn>
+              </TablixColumns>
+              <TablixRows>
+                <TablixRow>
+                  <Height>0.7in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox2">
+                          <rd:DefaultName>Textbox2</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Sale Report by Country</Value>
+                                  <Style>
+                                    <FontFamily>Cambria</FontFamily>
+                                    <FontSize>28pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>Khaki</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <BackgroundColor>CornflowerBlue</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <ColSpan>4</ColSpan>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell />
+                    <TablixCell />
+                    <TablixCell />
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.25in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="SalesGroup">
+                          <rd:DefaultName>SalesGroup</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Sale Group: </Value>
+                                  <Style>
+                                    <FontFamily>Century</FontFamily>
+                                    <FontSize>12pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                                <TextRun>
+                                  <Value>=Fields!SalesGroup.Value</Value>
+                                  <Style>
+                                    <FontFamily>Century</FontFamily>
+                                    <FontSize>12pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <ColSpan>4</ColSpan>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell />
+                    <TablixCell />
+                    <TablixCell />
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.25in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="SalesCountry">
+                          <rd:DefaultName>SalesCountry</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>       Sale Country: </Value>
+                                  <Style>
+                                    <FontFamily>Century</FontFamily>
+                                    <FontSize>11.5pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                                <TextRun>
+                                  <Value>=Fields!SalesCountry.Value</Value>
+                                  <Style>
+                                    <FontFamily>Century</FontFamily>
+                                    <FontSize>11.5pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <ColSpan>4</ColSpan>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell />
+                    <TablixCell />
+                    <TablixCell />
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.4in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="SalesRegion">
+                          <rd:DefaultName>SalesRegion</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>               Sale Region: </Value>
+                                  <Style>
+                                    <FontFamily>Century</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Format>0.00;(0.00)</Format>
+                                  </Style>
+                                </TextRun>
+                                <TextRun>
+                                  <Value>=Fields!SalesRegion.Value</Value>
+                                  <Style>
+                                    <FontFamily>Century</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Format>0.00;(0.00)</Format>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <ColSpan>4</ColSpan>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell />
+                    <TablixCell />
+                    <TablixCell />
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.25in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox87">
+                          <rd:DefaultName>Textbox87</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontFamily>Century</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox85">
+                          <rd:DefaultName>Textbox85</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontFamily>Century</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox58">
+                          <rd:DefaultName>Textbox58</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Currency in</Value>
+                                  <Style>
+                                    <FontFamily>Century</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Normal</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Currency">
+                          <rd:DefaultName>Currency</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!Currency.Value</Value>
+                                  <Style>
+                                    <FontFamily>Century</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.25in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox1">
+                          <rd:DefaultName>Textbox1</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Customer</Value>
+                                  <Style>
+                                    <FontFamily>Century</FontFamily>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>DarkGreen</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>LightBlue</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox3">
+                          <rd:DefaultName>Textbox1</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Order Date</Value>
+                                  <Style>
+                                    <FontFamily>Century</FontFamily>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>DarkGreen</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>LightBlue</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox4">
+                          <rd:DefaultName>Textbox1</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Product</Value>
+                                  <Style>
+                                    <FontFamily>Century</FontFamily>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>DarkGreen</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>LightBlue</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox5">
+                          <rd:DefaultName>Textbox1</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Sales Amount</Value>
+                                  <Style>
+                                    <FontFamily>Century</FontFamily>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>DarkGreen</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>LightBlue</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.25in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Customer">
+                          <rd:DefaultName>Customer</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!Customer.Value</Value>
+                                  <Style>
+                                    <FontFamily>Century</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                                <TextRun>
+                                  <Value>c</Value>
+                                  <Style>
+                                    <FontFamily>Century</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="OrderDate">
+                          <rd:DefaultName>OrderDate</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!OrderDate.Value</Value>
+                                  <Style>
+                                    <FontFamily>Century</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Product">
+                          <rd:DefaultName>Product</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!Product.Value</Value>
+                                  <Style>
+                                    <FontFamily>Century</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="SalesAmount">
+                          <rd:DefaultName>SalesAmount</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!SalesAmount.Value</Value>
+                                  <Style>
+                                    <FontFamily>Century</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                    <Format>#,0;(#,0)</Format>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.26667in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="SalesRegion2">
+                          <rd:DefaultName>SalesRegion</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Total Sales for </Value>
+                                  <Style>
+                                    <FontFamily>Century</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                    <Format>0.00;(0.00)</Format>
+                                  </Style>
+                                </TextRun>
+                                <TextRun>
+                                  <Value>=Fields!SalesRegion.Value</Value>
+                                  <Style>
+                                    <FontFamily>Century</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                    <Format>0.00;(0.00)</Format>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>Khaki</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <ColSpan>3</ColSpan>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell />
+                    <TablixCell />
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox158">
+                          <rd:DefaultName>Textbox158</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Fields!SalesAmount.Value)</Value>
+                                  <Style>
+                                    <FontFamily>Century</FontFamily>
+                                    <Format>#,0;(#,0)</Format>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.25833in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="SalesCountry2">
+                          <rd:DefaultName>SalesCountry</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Total Sale for </Value>
+                                  <Style>
+                                    <FontFamily>Century</FontFamily>
+                                    <FontSize>11.5pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                                <TextRun>
+                                  <Value>=Fields!SalesCountry.Value</Value>
+                                  <Style>
+                                    <FontFamily>Century</FontFamily>
+                                    <FontSize>11.5pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>Khaki</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <ColSpan>3</ColSpan>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell />
+                    <TablixCell />
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox171">
+                          <rd:DefaultName>Textbox171</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Fields!SalesAmount.Value)</Value>
+                                  <Style>
+                                    <FontFamily>Century</FontFamily>
+                                    <Format>#,0;(#,0)</Format>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.25833in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="SalesGroup2">
+                          <rd:DefaultName>SalesGroup</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Total Sales for </Value>
+                                  <Style>
+                                    <FontFamily>Century</FontFamily>
+                                    <FontSize>12pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                                <TextRun>
+                                  <Value>=Fields!SalesGroup.Value</Value>
+                                  <Style>
+                                    <FontFamily>Century</FontFamily>
+                                    <FontSize>12pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>Khaki</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <ColSpan>3</ColSpan>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell />
+                    <TablixCell />
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox194">
+                          <rd:DefaultName>Textbox194</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Fields!SalesAmount.Value)</Value>
+                                  <Style>
+                                    <FontFamily>Century</FontFamily>
+                                    <Format>#,0;(#,0)</Format>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+              </TablixRows>
+            </TablixBody>
+            <TablixColumnHierarchy>
+              <TablixMembers>
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+              </TablixMembers>
+            </TablixColumnHierarchy>
+            <TablixRowHierarchy>
+              <TablixMembers>
+                <TablixMember>
+                  <Group Name="SalesGroup">
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!SalesGroup.Value</GroupExpression>
+                    </GroupExpressions>
+                  </Group>
+                  <SortExpressions>
+                    <SortExpression>
+                      <Value>=Fields!SalesGroup.Value</Value>
+                    </SortExpression>
+                  </SortExpressions>
+                  <TablixMembers>
+                    <TablixMember>
+                      <KeepWithGroup>After</KeepWithGroup>
+                      <RepeatOnNewPage>true</RepeatOnNewPage>
+                    </TablixMember>
+                    <TablixMember>
+                      <KeepWithGroup>After</KeepWithGroup>
+                      <RepeatOnNewPage>true</RepeatOnNewPage>
+                      <KeepTogether>true</KeepTogether>
+                    </TablixMember>
+                    <TablixMember>
+                      <Group Name="SalesCountry">
+                        <GroupExpressions>
+                          <GroupExpression>=Fields!SalesCountry.Value</GroupExpression>
+                        </GroupExpressions>
+                      </Group>
+                      <SortExpressions>
+                        <SortExpression>
+                          <Value>=Fields!SalesCountry.Value</Value>
+                        </SortExpression>
+                      </SortExpressions>
+                      <TablixMembers>
+                        <TablixMember>
+                          <KeepWithGroup>After</KeepWithGroup>
+                          <RepeatOnNewPage>true</RepeatOnNewPage>
+                          <KeepTogether>true</KeepTogether>
+                        </TablixMember>
+                        <TablixMember>
+                          <Group Name="SalesRegion">
+                            <GroupExpressions>
+                              <GroupExpression>=Fields!SalesRegion.Value</GroupExpression>
+                            </GroupExpressions>
+                            <PageBreak>
+                              <BreakLocation>Between</BreakLocation>
+                            </PageBreak>
+                          </Group>
+                          <SortExpressions>
+                            <SortExpression>
+                              <Value>=Fields!SalesRegion.Value</Value>
+                            </SortExpression>
+                          </SortExpressions>
+                          <TablixMembers>
+                            <TablixMember>
+                              <KeepWithGroup>After</KeepWithGroup>
+                              <RepeatOnNewPage>true</RepeatOnNewPage>
+                              <KeepTogether>true</KeepTogether>
+                            </TablixMember>
+                            <TablixMember>
+                              <KeepWithGroup>After</KeepWithGroup>
+                              <RepeatOnNewPage>true</RepeatOnNewPage>
+                            </TablixMember>
+                            <TablixMember>
+                              <KeepWithGroup>After</KeepWithGroup>
+                              <RepeatOnNewPage>true</RepeatOnNewPage>
+                            </TablixMember>
+                            <TablixMember>
+                              <Group Name="Details" />
+                              <TablixMembers>
+                                <TablixMember />
+                              </TablixMembers>
+                            </TablixMember>
+                            <TablixMember>
+                              <KeepWithGroup>Before</KeepWithGroup>
+                            </TablixMember>
+                          </TablixMembers>
+                        </TablixMember>
+                      </TablixMembers>
+                    </TablixMember>
+                    <TablixMember>
+                      <KeepWithGroup>Before</KeepWithGroup>
+                    </TablixMember>
+                  </TablixMembers>
+                </TablixMember>
+                <TablixMember>
+                  <KeepWithGroup>Before</KeepWithGroup>
+                </TablixMember>
+              </TablixMembers>
+            </TablixRowHierarchy>
+            <RepeatRowHeaders>true</RepeatRowHeaders>
+            <DataSetName>InternestSales</DataSetName>
+            <Height>3.13333in</Height>
+            <Width>6in</Width>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Tablix>
+        </ReportItems>
+        <Height>3.13333in</Height>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Body>
+      <Width>6in</Width>
+      <Page>
+        <PageFooter>
+          <Height>0.475in</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <ReportItems>
+            <Textbox Name="ExecutionTime">
+              <rd:DefaultName>ExecutionTime</rd:DefaultName>
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Globals!ExecutionTime</Value>
+                      <Style />
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Right</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <Top>0.2in</Top>
+              <Left>4in</Left>
+              <Height>0.25in</Height>
+              <Width>2in</Width>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+          </ReportItems>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </PageFooter>
+        <LeftMargin>1in</LeftMargin>
+        <RightMargin>1in</RightMargin>
+        <TopMargin>1in</TopMargin>
+        <BottomMargin>1in</BottomMargin>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <ReportParameters>
+    <ReportParameter Name="SalesGroup">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>North America</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Sales Group</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>Group</DataSetName>
+          <ValueField>SalesTerritoryGroup</ValueField>
+          <LabelField>SalesTerritoryGroup</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <cl:ComponentMetadata>
+        <cl:HideUpdateNotifications>true</cl:HideUpdateNotifications>
+      </cl:ComponentMetadata>
+    </ReportParameter>
+    <ReportParameter Name="SalesCountry">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>United States</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Sales Country</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>Country</DataSetName>
+          <ValueField>SalesTerritoryCountry</ValueField>
+          <LabelField>SalesTerritoryCountry</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <cl:ComponentMetadata>
+        <cl:HideUpdateNotifications>true</cl:HideUpdateNotifications>
+      </cl:ComponentMetadata>
+    </ReportParameter>
+    <ReportParameter Name="SaleRegion">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>Central</Value>
+          <Value>Northeast</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Sale Region</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>Region</DataSetName>
+          <ValueField>SalesTerritoryRegion</ValueField>
+          <LabelField>SalesTerritoryRegion</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
+      <cl:ComponentMetadata>
+        <cl:HideUpdateNotifications>true</cl:HideUpdateNotifications>
+      </cl:ComponentMetadata>
+    </ReportParameter>
+  </ReportParameters>
+  <ReportParametersLayout>
+    <GridLayoutDefinition>
+      <NumberOfColumns>4</NumberOfColumns>
+      <NumberOfRows>2</NumberOfRows>
+      <CellDefinitions>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>SalesGroup</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>SalesCountry</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>2</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>SaleRegion</ParameterName>
+        </CellDefinition>
+      </CellDefinitions>
+    </GridLayoutDefinition>
+  </ReportParametersLayout>
+</Report>
