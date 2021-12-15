@@ -1,0 +1,89 @@
+Use AdventureWorksDW2019
+
+SELECT distinct SalesTerritoryGroup from [DimSalesTerritory]
+WHERE SalesTerritoryGroup != 'NA'
+
+SELECT distinct SalesTerritoryCountry from [DimSalesTerritory]
+WHERE SalesTerritoryCountry != 'NA'  
+and SalesTerritoryGroup = @SalesGroup
+
+SELECT distinct SalesTerritoryRegion from [DimSalesTerritory]
+WHERE SalesTerritoryRegion != 'NA'
+and SalesTerritoryGroup = @SalesGroup
+and SalesTerritoryCountry = @SalesCountry
+
+ALTER PROCEDURE [dbo].[Demo] 
+@SalesGroup Varchar(50),
+@SalesCountry varchar(50)
+AS
+
+SELECT 
+	   [DimProductCategory].EnglishProductCategoryName AS ProductCategory
+	  ,[DimProductSubcategory].EnglishProductSubcategoryName AS ProductSubcategory
+	  ,[DimProduct].EnglishProductName AS Product
+      ,[DimCustomer].FirstName + ' ' + [DimCustomer].LastName AS Customer
+	  ,[DimCustomer].Phone
+	  ,[DimCustomer].BirthDate
+	  ,[DimCustomer].MaritalStatus
+	  ,[DimCustomer].Gender
+	  ,[DimCustomer].EmailAddress AS Email
+	  ,[DimCustomer].YearlyIncome
+	  ,[DimCustomer].TotalChildren
+	  ,[DimCustomer].EnglishEducation AS Education
+	  ,[DimCustomer].EnglishOccupation AS Occupation
+	  ,CASE
+		 WHEN
+			[DimCustomer].HouseOwnerFlag = 1
+         THEN
+            'Yes'
+		  ELSE
+		    'No'
+	   END AS HomeOwner
+	  ,[DimCustomer].AddressLine1 AS Address
+	  ,[DimGeography].City
+	  ,[DimGeography].StateProvinceCode AS StateProvince
+	  ,[DimGeography].CountryRegionCode AS CountryCode
+	  ,[DimGeography].PostalCode
+	  ,[DimSalesTerritory].SalesTerritoryGroup AS SalesGroup
+	  ,[DimSalesTerritory].SalesTerritoryCountry AS SalesCountry
+	  ,[DimSalesTerritory].SalesTerritoryRegion AS SalesRegion
+      ,[DimPromotion].EnglishPromotionName AS PromotionName
+	  ,[DimPromotion].EnglishPromotionType AS PromotionType
+	  ,[DimPromotion].EnglishPromotionCategory AS PromotionCategory
+	  ,[DimPromotion].StartDate AS PromotionStart
+	  ,[DimPromotion].EndDate AS PromotionEnd
+	  ,[DimPromotion].MinQty AS PromotionMinQty 
+	  ,[DimPromotion].MaxQty AS PromotionMaxQty
+      ,[DimCurrency].CurrencyAlternateKey AS Currency
+	  ,[DimCurrency].CurrencyName
+      ,[FactInternetSales].SalesOrderNumber
+      ,[FactInternetSales].SalesOrderLineNumber
+      ,[FactInternetSales].OrderQuantity     
+	  ,CAST([FactInternetSales].UnitPrice AS INT) AS UnitPrice     
+	  ,CAST([FactInternetSales].TotalProductCost AS INT) AS TotalCost   
+	  ,CAST([FactInternetSales].SalesAmount AS INT) AS SalesAmount
+	  ,CAST([FactInternetSales].TaxAmt AS INT) AS Tax
+	  ,CAST([FactInternetSales].Freight AS INT) AS Freight
+      ,FORMAT([FactInternetSales].OrderDate, 'dd-mm-yyyy') AS OrderDate     
+	  ,FORMAT([FactInternetSales].DueDate, 'dd-mm-yyyy') AS DueDate     
+	  ,FORMAT([FactInternetSales].ShipDate, 'dd-mm-yyyy') AS ShipDate
+  FROM		[AdventureWorksDW].[dbo].[FactInternetSales]
+  JOIN		[AdventureWorksDW].[dbo].[DimProduct] 
+  ON		[AdventureWorksDW].[dbo].[FactInternetSales].ProductKey = [AdventureWorksDW].[dbo].[DimProduct] .ProductKey
+  JOIN		[AdventureWorksDW].[dbo].[DimCustomer]
+  ON		[AdventureWorksDW].[dbo].[FactInternetSales].CustomerKey = [AdventureWorksDW].[dbo].[DimCustomer].CustomerKey
+  JOIN		[AdventureWorksDW].[dbo].[DimGeography]
+  ON		[AdventureWorksDW].[dbo].[DimCustomer].GeographyKey = [AdventureWorksDW].[dbo].[DimGeography].GeographyKey
+  JOIN		[AdventureWorksDW].[dbo].[DimSalesTerritory]
+  ON		[AdventureWorksDW].[dbo].[DimGeography].SalesTerritoryKey = [AdventureWorksDW].[dbo].[DimSalesTerritory].SalesTerritoryKey
+  JOIN		[AdventureWorksDW].[dbo].[DimPromotion]
+  ON		[AdventureWorksDW].[dbo].[FactInternetSales].PromotionKey = [AdventureWorksDW].[dbo].[DimPromotion].PromotionKey
+  JOIN		[AdventureWorksDW].[dbo].[DimCurrency]
+  ON		[AdventureWorksDW].[dbo].[FactInternetSales].CurrencyKey = [AdventureWorksDW].[dbo].[DimCurrency].CurrencyKey
+  JOIN		[AdventureWorksDW].[dbo].[DimProductSubcategory]
+  ON		[AdventureWorksDW].[dbo].[DimProduct].ProductSubcategoryKey = [AdventureWorksDW].[dbo].[DimProductSubcategory].ProductSubcategoryKey
+  JOIN		[AdventureWorksDW].[dbo].[DimProductCategory]
+  ON		[AdventureWorksDW].[dbo].[DimProductSubcategory].ProductCategoryKey = [AdventureWorksDW].[dbo].[DimProductCategory].ProductCategoryKey
+  WHERE     [DimSalesTerritory].SalesTerritoryGroup = @SalesGroup
+  AND       [DimSalesTerritory].SalesTerritoryCountry = @SalesCountry 
+
